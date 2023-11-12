@@ -32,8 +32,9 @@ def main():
         guessed_letters = update_guessed_letters(
             guessed_letters, guess
         )  # Update guessed letters
+        attempts += 1  # Increment attempts
         game_won = check_game_won(secret_word, guessed_letters)  # Check if game is won
-    show_win_loss_screen(game_won)  # Show win/loss screen
+    show_win_loss_screen(game_won, secret_word)  # Show win/loss screen
 
 
 def update_guessed_letters(guessed_letters, guess):
@@ -138,10 +139,10 @@ def check_game_won(secret_word, guessed_letters):
     return True
 
 
-def show_win_loss_screen(game_won):
+def show_win_loss_screen(game_won, secret_word):
     # Function to show the win screen
     if game_won:
-        print("You won!")
+        print(f"You won!" The word was {secret_word}")
     else:
         print("You lost!")
 
