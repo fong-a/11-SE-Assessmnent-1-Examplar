@@ -25,7 +25,19 @@ def main():
 
     # Game loop
     while attempts < 6 and not game_won:
-        pass
+        display_game_state(secret_word, guessed_letters, attempts)
+
+
+def display_game_state(secret_word, guessed_letters, attempts):
+    # Function to display the game state, only displays letters that have been guessed
+    for i in secret_word:
+        if i in guessed_letters:
+            print(i, end=" ")
+        else:
+            print("_", end=" ")
+
+    # Print the number of lives / attempts left
+    print("\nAttempts left: " + str(6 - attempts))
 
 
 # Function to get a random word from the word list
