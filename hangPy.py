@@ -32,6 +32,7 @@ def main():
         guessed_letters = update_guessed_letters(
             guessed_letters, guess
         )  # Update guessed letters
+        game_won = check_game_won(secret_word, guessed_letters)  # Check if game is won
 
 
 def update_guessed_letters(guessed_letters, guess):
@@ -65,6 +66,14 @@ def get_random_word(word_list):
 def get_player_guess():
     # Function to get the player's guess
     return input("Guess a letter: ")
+
+
+def check_game_won(secret_word, guessed_letters):
+    # Function to check if the game is won
+    for i in secret_word:
+        if i not in guessed_letters:
+            return False
+    return True
 
 
 if __name__ == "__main__":
