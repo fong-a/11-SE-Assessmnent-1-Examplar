@@ -47,7 +47,7 @@ def get_random_word(word_list):
 
 # Function to get the player's guess
 def get_player_guess():
-    pass  # Placeholder for player's guess input function
+    return input("Guess a letter: ")
 
 
 if __name__ == "__main__":
