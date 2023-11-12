@@ -25,13 +25,24 @@ def main():
 
     # Game loop
     while attempts < 6 and not game_won:
-        display_game_state(secret_word, guessed_letters, attempts)
-        guess = get_player_guess()
+        display_game_state(
+            secret_word, guessed_letters, attempts
+        )  # Display the game state
+        guess = get_player_guess()  # Get player's guess
+        guessed_letters = update_guessed_letters(
+            guessed_letters, guess
+        )  # Update guessed letters
 
 
 def update_guessed_letters(guessed_letters, guess):
     # Function to update the guessed letters
-    guessed_letters.add(guess)
+    # If letter already been guessed, print message and get another guess
+    if guess not in guessed_letters:
+        guessed_letters.add(guess)
+    else:
+        print("You already guessed that letter!")
+        update_guessed_letters(guessed_letters, get_player_guess())
+    return guessed_letters
 
 
 def display_game_state(secret_word, guessed_letters, attempts):
