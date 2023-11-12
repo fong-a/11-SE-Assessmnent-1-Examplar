@@ -4,8 +4,8 @@ from random import choice
 # created by: Andrew Fong on 12/11/2023
 
 
-# Function to run the game
 def main():
+    # Function to run the game
     word_list = [
         "apple",
         "banana",
@@ -26,6 +26,12 @@ def main():
     # Game loop
     while attempts < 6 and not game_won:
         display_game_state(secret_word, guessed_letters, attempts)
+        guess = get_player_guess()
+
+
+def update_guessed_letters(guessed_letters, guess):
+    # Function to update the guessed letters
+    guessed_letters.add(guess)
 
 
 def display_game_state(secret_word, guessed_letters, attempts):
@@ -40,18 +46,14 @@ def display_game_state(secret_word, guessed_letters, attempts):
     print("\nAttempts left: " + str(6 - attempts))
 
 
-# Function to get a random word from the word list
 def get_random_word(word_list):
+    # Function to get a random word from the word list
     return choice(word_list)
 
 
-# Function to get the player's guess
 def get_player_guess():
+    # Function to get the player's guess
     return input("Guess a letter: ")
-
-
-if __name__ == "__main__":
-    main()
 
 
 if __name__ == "__main__":
