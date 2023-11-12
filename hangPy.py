@@ -4,6 +4,7 @@ from random import choice
 # created by: Andrew Fong on 12/11/2023
 
 
+# Function to run the game
 def main():
     word_list = [
         "apple",
@@ -22,14 +23,17 @@ def main():
     attempts = 0  # Number of attempts
     game_won = False  # Boolean to check if game is won
 
+    # Game loop
     while attempts < 6 and not game_won:
         pass
 
 
+# Function to get a random word from the word list
 def get_random_word(word_list):
     return choice(word_list)
 
 
+# Function to get the player's guess
 def get_player_guess():
     pass  # Placeholder for player's guess input function
 
