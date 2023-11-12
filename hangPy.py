@@ -3,7 +3,16 @@
 
 
 def main():
-    pass  # Placeholder for the main game loop
+    word_list = []  # List to store the words
+    guessed_letters = set()  # Set to store guessed letters
+
+
+def get_random_word():
+    pass  # Placeholder for word selection function
+
+
+def get_player_guess():
+    pass  # Placeholder for player's guess input function
 
 
 if __name__ == "__main__":
