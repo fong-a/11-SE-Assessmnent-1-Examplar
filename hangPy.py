@@ -33,6 +33,7 @@ def main():
             guessed_letters, guess
         )  # Update guessed letters
         game_won = check_game_won(secret_word, guessed_letters)  # Check if game is won
+    show_win_loss_screen(game_won)  # Show win/loss screen
 
 
 def update_guessed_letters(guessed_letters, guess):
@@ -76,5 +77,18 @@ def check_game_won(secret_word, guessed_letters):
     return True
 
 
+def show_win_loss_screen(game_won):
+    # Function to show the win screen
+    if game_won:
+        print("You won!")
+    else:
+        print("You lost!")
+
+
 if __name__ == "__main__":
-    main()
+    play_game = True
+    while play_game:
+        main()
+        play_again = input("Play again? (y/n): ")
+        if play_again == "n":
+            play_game = False
