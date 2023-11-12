@@ -6,19 +6,10 @@ from random import choice
 
 def main():
     # Function to run the game
-    word_list = [
-        "apple",
-        "banana",
-        "cherry",
-        "orange",
-        "grape",
-        "kiwi",
-        "lemon",def main():
-    # Function to run the game
     word_list = {
         1: ["cat", "dog", "rat"],
         2: ["elephant", "giraffe", "dolphin"],
-        3: ["hippopotamus", "chrysanthemum", "pterodactyl"]
+        3: ["hippopotamus", "chrysanthemum", "pterodactyl"],
     }
 
     difficulty = int(input("Select a difficulty level (1, 2, or 3): "))
@@ -26,12 +17,7 @@ def main():
         print("Invalid input. Please enter 1, 2, or 3.")
         difficulty = int(input("Select a difficulty level (1, 2, or 3): "))
 
-    word_to_guess = choice(word_list[difficulty])
-    # rest of the game logic...
-        "melon",
-        "peach",
-        "pear",
-    ]  # List to store the words
+    secret_word = choice(word_list[difficulty])
     guessed_letters = set()  # Set to store guessed letters
     secret_word = get_random_word(word_list)
     attempts = 0  # Number of attempts
@@ -142,8 +128,14 @@ def get_random_word(word_list):
 
 
 def get_player_guess():
-    # Function to get the player's guess
-    return input("Guess a letter: ")
+    while True:
+        guess = input("Guess a letter: ")
+        if len(guess) != 1:
+            print("Invalid input. Please enter a single letter.")
+        elif not guess.isalpha():
+            print("Invalid input. Please enter a letter, not a number or symbol.")
+        else:
+            return guess  # Exit the loop if the input is valid
 
 
 def check_game_won(secret_word, guessed_letters):
