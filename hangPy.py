@@ -20,6 +20,7 @@ def main():
     ]  # List to store the words
     guessed_letters = set()  # Set to store guessed letters
     secret_word = get_random_word(word_list)
+    print(secret_word)  # For debugging purposes
     attempts = 0  # Number of attempts
     game_won = False  # Boolean to check if game is won
 
@@ -32,6 +33,7 @@ def main():
         guessed_letters = update_guessed_letters(
             guessed_letters, guess
         )  # Update guessed letters
+        print(guessed_letters)  # For debugging purposes
         game_won = check_game_won(secret_word, guessed_letters)  # Check if game is won
     show_win_loss_screen(game_won)  # Show win/loss screen
 
