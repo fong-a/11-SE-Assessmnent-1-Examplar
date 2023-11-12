@@ -13,7 +13,21 @@ def main():
         "orange",
         "grape",
         "kiwi",
-        "lemon",
+        "lemon",def main():
+    # Function to run the game
+    word_list = {
+        1: ["cat", "dog", "rat"],
+        2: ["elephant", "giraffe", "dolphin"],
+        3: ["hippopotamus", "chrysanthemum", "pterodactyl"]
+    }
+
+    difficulty = int(input("Select a difficulty level (1, 2, or 3): "))
+    while difficulty not in [1, 2, 3]:
+        print("Invalid input. Please enter 1, 2, or 3.")
+        difficulty = int(input("Select a difficulty level (1, 2, or 3): "))
+
+    word_to_guess = choice(word_list[difficulty])
+    # rest of the game logic...
         "melon",
         "peach",
         "pear",
