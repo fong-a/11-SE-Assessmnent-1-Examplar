@@ -32,7 +32,8 @@ def main():
         guessed_letters = update_guessed_letters(
             guessed_letters, guess
         )  # Update guessed letters
-        attempts += 1  # Increment attempts
+        if guess not in secret_word:
+            attempts += 1  # Increment attempts if guess is wrong
         game_won = check_game_won(secret_word, guessed_letters)  # Check if game is won
     show_win_loss_screen(game_won, secret_word)  # Show win/loss screen
 
