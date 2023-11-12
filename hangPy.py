@@ -142,7 +142,7 @@ def check_game_won(secret_word, guessed_letters):
 def show_win_loss_screen(game_won, secret_word):
     # Function to show the win screen
     if game_won:
-        print(f"You won!" The word was {secret_word}")
+        print(f"You won! The word was {secret_word}")
     else:
         print("You lost!")
 
