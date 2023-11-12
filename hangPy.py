@@ -19,6 +19,11 @@ def main():
     ]  # List to store the words
     guessed_letters = set()  # Set to store guessed letters
     secret_word = get_random_word(word_list)
+    attempts = 0  # Number of attempts
+    game_won = False  # Boolean to check if game is won
+
+    while attempts < 6 and not game_won:
+        pass
 
 
 def get_random_word(word_list):
