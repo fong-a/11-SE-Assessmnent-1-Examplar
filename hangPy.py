@@ -19,7 +19,6 @@ def main():
 
     secret_word = choice(word_list[difficulty])
     guessed_letters = set()  # Set to store guessed letters
-    secret_word = get_random_word(word_list)
     attempts = 0  # Number of attempts
     game_won = False  # Boolean to check if game is won
 
